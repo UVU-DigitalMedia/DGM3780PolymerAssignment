@@ -1,0 +1,15 @@
+{
+  "name": "polymerassign",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server"
+  },
+  "author": "Landon Conover <landon.conover@gmail.com> (https://github.com/landonconover)",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^0.8.5"
+  }
+}
