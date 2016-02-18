@@ -15,9 +15,51 @@
 
         <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
         <link rel="import" href="bower_components/paper-card/paper-card.html">
-
         <link rel="import" href="bower_components/iron-icons/iron-icons.html">
-        <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+        <link rel="import" href="bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+        <link rel="import" href="bower_components/paper-item/paper-item.html">
+        <link rel="import" href="bower_components/paper-radio-button/paper-radio-button.html">
+
+        <dom-module id="hello-world">
+        
+            <style>
+
+                h1 {
+
+                    color: blue;
+                }
+
+            </style>
+
+            <template>
+
+                <h1>Hello World</h1>
+
+                <p><strong>The first-name property is:</strong> {{firstName}}</p>
+
+                <p>Two Way Binding:</p>
+                <input type="text" value="{{inputText::input}}" placeholder="Enter Some Text Here">
+                <p>{{inputText}}</p>
+            
+            </template>
+
+        </dom-module>
+
+        <script>
+
+            Polymer({
+
+                is: 'hello-world',
+
+                properties: {
+
+                    firstName: String,
+                    inputText : String
+                }
+
+            });
+
+        </script>
 
     </head>
     <body>
@@ -33,6 +75,52 @@
             <paper-card heading="Card Title">
                 <div class="card-content">
                     Card Content Here. (Hint: Copy and paste this card and put other components in it.)
+                </div>
+            </paper-card>
+        </div>
+
+        <div class="card-width centered">
+            <paper-card heading="Catalog Component 1: card-content">
+                <div class="card-content">
+                    <paper-dropdown-menu label="Your favourite pastry">
+                      <paper-menu class="dropdown-content">
+                        <paper-item>Croissant</paper-item>
+                        <paper-item>Donut</paper-item>
+                        <paper-item>Financier</paper-item>
+                        <paper-item>Madeleine</paper-item>
+                      </paper-menu>
+                    </paper-dropdown-menu>
+                </div>
+            </paper-card>
+        </div>
+
+        <div class="card-width centered">
+            <paper-card heading="Catalog Component 2: paper-item">
+                <div class="card-content">
+                    <paper-item>
+                        <paper-item-body two-line>
+                            <div>Show your status</div>
+                            <div secondary>Your status is visible to everyone</div>
+                        </paper-item-body>
+                            <iron-icon icon="warning"></iron-icon>
+                    </paper-item>
+                </div>
+            </paper-card>
+        </div>
+
+        <div class="card-width centered">
+            <paper-card heading="Catalog Component 2: paper-radio-button">
+                <div class="card-content">
+                    <paper-radio-button>Item label</paper-radio-button>
+                    <paper-radio-button>Another Item label</paper-radio-button>
+                </div>
+            </paper-card>
+        </div>
+
+        <div class="card-width centered">
+            <paper-card heading="Custom Component">
+                <div class="card-content">
+                    <hello-world first-name="Billy"></hello-world>
                 </div>
             </paper-card>
         </div>
