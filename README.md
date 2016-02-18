@@ -1,7 +1,7 @@
 # DGM3780Polymer Assignment
 Moving on to front end libraries and frameworks. This repo is all about [Polymer](https://www.polymer-project.org/1.0/).
 
-The Polymer library is designed to make it easier and faster for developers to create great, reusable components for the modern web.
+The Polymer library is designed to make it easier and faster for developers to create great, reusable components and elements for the modern web.
 
 #Steps - These have changed!
 1. Fork and clone the repo. See [the first assignment](https://github.com/UVU-DigitalMedia/DGM3780-Assign1) for detailed steps.
