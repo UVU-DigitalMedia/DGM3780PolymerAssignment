@@ -1,0 +1,9 @@
+{
+  "firebase": "simple-polymer",
+  "public": "/",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

@@ -1,0 +1,29 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+
+
+<dom-module id="my-component">
+    <style>
+        h1{
+            color: darkgreen;
+        }
+    </style>
+    <template>
+        <h2>Score {{score}}</h2>
+        <input type="number" value="{{score::input}}">
+    </template>
+</dom-module>
+
+<script>
+    Polymer({
+        is: 'my-component',
+        properties: {
+            score: {
+                type: Number,
+            },
+        },
+        
+        computeNewRating: function(rating, myRating){
+            return score + myScore;
+        }
+    });    
+</script>
