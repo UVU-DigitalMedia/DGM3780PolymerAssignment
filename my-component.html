@@ -8,12 +8,22 @@
         }
     </style>
     <template>
-        <h1>Hello World</h1>
+        <h2>Score {{score}}</h2>
+        <input type="number" value="{{score::input}}">
     </template>
 </dom-module>
 
 <script>
     Polymer({
-        is: 'my-component'
+        is: 'my-component',
+        properties: {
+            score: {
+                type: Number,
+            },
+        },
+        
+        computeNewRating: function(rating, myRating){
+            return score + myScore;
+        }
     });    
 </script>
