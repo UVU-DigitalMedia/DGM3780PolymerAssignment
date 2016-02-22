@@ -1,0 +1,35 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+
+<dom-module id="login-welcome">
+  <style>
+  </style>
+  <template>
+    <h2>{{welcomeMessage}}, {{firstName}} {{lastName}}.</h2>
+    <p>It has been {{numDays}} days since your last login.</p>
+    <a href$="{{acctLink}}">View your account</a>
+    <hr/>
+    <div>
+      <strong>Change welcome message: </strong>
+      <input type="text" value="{{welcomeMessage::input}}">
+    </div>
+  </template>
+</dom-module>
+
+<script>
+  Polymer({
+    is: "login-welcome",
+    properties: {
+      fistName: String,
+      lastName: String,
+      numDays: Number,
+      acctLink: {
+        type: String,
+        computed: 'computeLink(firstName, lastName)'
+      },
+      welcomeMessage: String,
+    },
+    computeLink(firstName, lastName) {
+      return (firstName + '-' + lastName).toLowerCase();
+    }
+  });
+</script>
