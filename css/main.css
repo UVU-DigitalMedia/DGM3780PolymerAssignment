@@ -70,7 +70,10 @@ paper-card {
     width: 100%;
 }
 
-
+google-map {
+  height: 350px;
+  width: 100%;
+}
 
 
 

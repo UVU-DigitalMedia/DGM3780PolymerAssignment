@@ -19,6 +19,11 @@
         <link rel="import" href="bower_components/iron-icons/iron-icons.html">
         <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
 
+        <link rel="import" href="bower_components/google-map/google-map.html">
+        <link rel="import" href="loginWelcome.html">
+        <link rel="import" href="bower_components/paper-badge/paper-badge.html">
+        <link rel="import" href="bower_components/paper-input/paper-input.html">
+
     </head>
     <body>
 
@@ -30,9 +35,40 @@
         </paper-toolbar>
 
         <div class="card-width centered">
-            <paper-card heading="Card Title">
+            <paper-card heading="Google Map Element">
                 <div class="card-content">
-                    Card Content Here. (Hint: Copy and paste this card and put other components in it.)
+                <google-map latitude="21.5333" longitude="-286.5333" title="I have no idea where this takes you."></google-map>
+                </div>
+            </paper-card>
+        </div>
+
+        <div class="card-width centered">
+            <paper-card heading="Custom Login Welcome Element">
+                <div class="card-content">
+                <login-welcome first-name="Scott" last-name="Pilgrim" num-days="28" welcome-message="Welcome back"></login-welcome>
+                </div>
+            </paper-card>
+        </div>
+
+        <div class="card-width centered">
+            <paper-card heading="Paper Icon Button">
+                <div class="card-content">
+                  <paper-icon-button id="number" icon="communication:email" alt="inbox"></paper-icon-button>
+                  <paper-badge for="number" label="4"></paper-badge>
+
+                  <paper-icon-button id="icon" icon="account-box" alt="person"></paper-icon-button>
+                  <paper-badge icon="social:mood" for="icon" label="happy"></paper-badge>
+                </div>
+            </paper-card>
+        </div>
+
+        <div class="card-width centered">
+            <paper-card heading="Paper Inputs">
+                <div class="card-content">
+                  <paper-input label="text input"></paper-input>
+                  <paper-textarea label="autoresizing textarea input"></paper-textarea>
+                  <paper-input label="password input" type="password"></paper-input>
+                  <paper-input label="disabled input" disabled></paper-input>
                 </div>
             </paper-card>
         </div>
