@@ -7,7 +7,7 @@ gulp.task('default', function() {
 
 gulp.task('connect', function() {
   connect.server({
-    root: './',
+    root: '',
     livereload: true
   });
 });
