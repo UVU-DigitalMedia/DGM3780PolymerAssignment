@@ -1,41 +1,103 @@
 <!doctype html>
 <html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="css/normalize.min.css">
-        <link rel="stylesheet" href="css/main.css">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-        <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/main.css">
 
-        <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
-        <link rel="import" href="bower_components/paper-card/paper-card.html">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
 
-        <link rel="import" href="bower_components/iron-icons/iron-icons.html">
-        <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+    <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
+    <link rel="import" href="bower_components/paper-card/paper-card.html">
 
-    </head>
-    <body>
+    <link rel="import" href="bower_components/iron-icons/iron-icons.html">
+    <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+>
+    <link rel="import" href="bower_components/google-youtube/google-youtube.html">
+    
+    <link rel="import" href="google-hangout-button/google-hangout-button.html">
+    
+    <link rel="import" href="google-sheets/google-sheets.html">
+    
+    
+    
+</head>
 
-        <paper-toolbar>
-                <paper-icon-button icon="menu"></paper-icon-button>
-                <span class="title">DGM 3780 Polymer Assignment</span>
-                <paper-icon-button icon="refresh"></paper-icon-button>
-                <paper-icon-button icon="add">+</paper-icon-button>
-        </paper-toolbar>
+<body>
+    
+  
 
-        <div class="card-width centered">
-            <paper-card heading="Card Title">
-                <div class="card-content">
-                    Card Content Here. (Hint: Copy and paste this card and put other components in it.)
-                </div>
-            </paper-card>
-        </div>
+    <paper-toolbar>
+        <paper-icon-button icon="menu"></paper-icon-button>
+        <span class="title">DGM 3780 Polymer Assignment</span>
+        <paper-icon-button icon="refresh"></paper-icon-button>
+        <paper-icon-button icon="add">+</paper-icon-button>
+    </paper-toolbar>
 
-    </body>
+    <div class="card-width centered">
+        <paper-card heading="Card Title">
+            <div class="card-content">
+                Card Content Here. (Hint: Copy and paste this card and put other components in it.)
+            </div>
+        </paper-card>
+    </div>
+    
+    
+
+<style>
+    section {
+      max-width: 500px;
+    }
+    section > div {
+      padding: 10px;
+    }
+          
+  </style>
+    
+      <section>
+    <div class="layout horizontal center">
+      <span class="flex">Default button</span>
+      <span class="flex"><google-hangout-button></google-hangout-button></span>
+    </div>
+     </section>
+
+    <google-sheets key="1sNonGbLAWwtPNFJyrOk8CAd4GDL7jbwqQoslrrdbTXk" published>
+    </google-sheets>
+
+    <script>
+      var sheet = document.querySelector('google-sheets');
+
+      sheet.addEventListener('google-sheet-data', function(e) {
+       // this.spreadsheets - list of the user's spreadsheets
+       // this.tab - information on the tab that was fetched
+       // this.rows - cell row information for the tab that was fetched
+      });
+
+      sheet.addEventListener('error', function(e) {
+       // e.detail.response
+      });
+    </script>
+    
+
+    <google-youtube
+      video-id="jBkh2e6HYqo"
+      height="270px"
+      width="480px"
+      rel="0"
+      start="5"
+      autoplay="1">
+    </google-youtube>
+    
+    
+    
+    
+</body>
+
 </html>
