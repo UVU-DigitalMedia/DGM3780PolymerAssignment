@@ -18,23 +18,81 @@
 
         <link rel="import" href="bower_components/iron-icons/iron-icons.html">
         <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+        
+        <link rel="import" href="bower_components/google-map/google-map.html">
+        
+        <link rel="import" href="Erins-element.html">
+        
+        <script>
+  var scrollable = Polymer.dom(myDialog).querySelector('paper-dialog-scrollable');
+  scrollable.dialogElement = myDialog;
+</script>
+
+<style>
+  google-map {
+    height: 600px;
+  }
+</style>
 
     </head>
     <body>
-
+        
         <paper-toolbar>
+              
                 <paper-icon-button icon="menu"></paper-icon-button>
                 <span class="title">DGM 3780 Polymer Assignment</span>
                 <paper-icon-button icon="refresh"></paper-icon-button>
                 <paper-icon-button icon="add">+</paper-icon-button>
         </paper-toolbar>
-
+        
+        <erins-element first-name="First Name" last-name="Last Name"></erins-element>
+        
         <div class="card-width centered">
-            <paper-card heading="Card Title">
+            <paper-card heading="Cards are the New Texts">
                 <div class="card-content">
-                    Card Content Here. (Hint: Copy and paste this card and put other components in it.)
-                </div>
+                    
+                    
+                    <paper-card heading="Cards are the New Texts">
+            <div class="card-content">Create a new card, your way</div>
+            <div class="card-actions">
+                <paper-button>Click here to start</paper-button>
+            </div>
+           </paper-card>
+
+
+<paper-fab icon="add"></paper-fab>
+<paper-fab mini icon="favorite"></paper-fab>
+<paper-fab src="star.png"></paper-fab>
+
+<gold-cc-expiration-input></gold-cc-expiration-input>
+<gold-cc-expiration-input value="11/15"></gold-cc-expiration-input>
+
+<paper-dialog-impl id="myDialog">
+  <h2>Maps!</h2>
+  <div class="my-content-wrapper">
+    <h4>Find where you need to go</h4>
+    <paper-dialog-scrollable>
+      To find where you would like to go, all you need to know is where you want to go. Otherwise, you don't need to know.
+    </paper-dialog-scrollable>
+  </div>
+  <div class="buttons">
+    <paper-button>OK</paper-button>
+  </div>
+</paper-dialog-impl>
+
+</div>
             </paper-card>
+            
+            
+            <paper-card heading="Cards are the New Texts">
+            <div class="card-content">
+                <google-map></google-map>
+            </div>
+            <div class="card-actions">
+                <paper-button>Start Now!</paper-button>
+            </div>
+           </paper-card>
+            
         </div>
 
     </body>

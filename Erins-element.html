@@ -1,0 +1,30 @@
+<dom-module id='erins-element'>
+    
+    <template>
+        <h1>HELLO WORLD</h1>
+        <p>{{firstName}} {{lastName}} </p>
+        
+        <p> First Name: </p>
+        <input value={{firstName::input}}></input> 
+        <style>
+           h1 {
+               color: blue;
+           }
+        </style>
+        <p>Last Name:</p>
+        <input value={{lastName::input}}></input>
+    </template>
+    
+    <script>
+    Polymer({
+      /* this is the element's prototype */
+      is: 'erins-element', 
+      properties: {
+      firstName: String
+    }
+      
+    });
+  </script>
+    
+    
+</dom-module>
