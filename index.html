@@ -12,7 +12,7 @@
 
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
         <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
-		<script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+	<script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
 		
         <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
         <link rel="import" href="bower_components/paper-card/paper-card.html">
@@ -20,18 +20,14 @@
         <link rel="import" href="bower_components/iron-icons/iron-icons.html">
         <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
 		
-		<link rel="import" href="../../paper-button/paper-button.html">
-		 <link rel="import" href="../../paper-checkbox/paper-checkbox.html">
-		<link rel="import" href="../../paper-styles/color.html">
-		<link rel="import" href="../../iron-collapse/iron-collapse.html">
-		<link rel="import" href="../../iron-icons/hardware-icons.html">
-		<link rel="import" href="../../iron-flex-layout/iron-flex-layout.html">
-		 <link rel="import" href="../../iron-icons/communication-icons.html">
-	<style is="custom-style"></style>
-	
-
-    
-
+		<link rel="import" href="bower_components/paper-button/paper-button.html">
+		 <link rel="import" href="bower_components/paper-checkbox/paper-checkbox.html">
+		<link rel="import" href="bower_components/paper-styles/color.html">
+		<link rel="import" href="bower_components/iron-collapse/iron-collapse.html">
+		<link rel="import" href="bower_components/iron-icons/hardware-icons.html">
+		<link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout.html">
+		 <link rel="import" href="bower_components/iron-icons/communication-icons.html">
+ 
     </head>
     <body>
 
@@ -50,19 +46,30 @@
                </div>
 			<div class="card-actions">
 				
-					<button on-click="toggle">toggle collapse</button>
-					<div>Exploring . . .</div>
+					<button on-click="toggle">Exploring . . .</button>
+					
 					<iron-collapse id="collapse">
   						 <div>by yourself isn't fun!</div>
 					</iron-collapse>
 
-					...
-
-					toggle: function() {
+					. . .toggle: function() {
 					this.$.collapse.toggle();
 					}
-				
-				</div>
+				 <paper-icon-button icon="hardware:keyboard-arrow-up" title="more info" onclick="_toggle()" style="float:right;">
+    </paper-icon-button>
+    <iron-collapse style="width:100%;">
+     by yourself isn't fun! 
+    </iron-collapse>
+    <script>
+      function _toggle() {
+        var moreInfo = document.getElementById('more-info');
+        var iconButton = Polymer.dom(event).localTarget;
+        iconButton.icon = moreInfo.opened ? 'hardware:keyboard-arrow-up'
+                                          : 'hardware:keyboard-arrow-down';
+        moreInfo.toggle();
+      }
+    </script>
+			</div>
 				
 <style is="custom-style">
   #notes {
@@ -80,21 +87,33 @@
   }
 </style>
 <div id="notes">
- 
+ 	 <paper-card class="amber">
+		 
     <div class="card-content">
       <p>8o Oh! so cleaning day is when</p>
      		<paper-checkbox>Tuesday?</paper-checkbox>
+		<paper-checkbox checked> Tuesday</paper-checkbox>
+		
+		<paper-toggle-button>Wednesday</paper-toggle-button>
 			<paper-checkbox>Wednesday?</paper-checkbox>
+		
       		<paper-checkbox>Thursday?</paper-checkbox>
+		
       		<paper-checkbox>Friday?</paper-checkbox>
-    </div>
-    <div class="card-actions">
-      <paper-icon-button icon="communication:location-on" style="color:lime"></paper-icon-button>
-      <span>where's the phone??</span>
-    </div>	
-  </div>
+		icons:check-box-outline-blank
 
- 	
+    </div>
+</paper-card>	
+<div id="notes">
+ <paper-card>
+    <div class="card-actions">
+      <paper-icon-button icon="communication:call" style="color:lime"></paper-icon-button>
+      <span>where's the phone??</span>
+	 </div>
+	
+</paper-card>
+  </div>
+ </div>		
 </paper-card>      
 </div> 
 </body>
