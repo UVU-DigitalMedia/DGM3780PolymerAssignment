@@ -12,12 +12,25 @@
 
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
         <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
-
+		<script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+		
         <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
         <link rel="import" href="bower_components/paper-card/paper-card.html">
 
         <link rel="import" href="bower_components/iron-icons/iron-icons.html">
         <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+		
+		<link rel="import" href="../../paper-button/paper-button.html">
+		 <link rel="import" href="../../paper-checkbox/paper-checkbox.html">
+		<link rel="import" href="../../paper-styles/color.html">
+		<link rel="import" href="../../iron-collapse/iron-collapse.html">
+		<link rel="import" href="../../iron-icons/hardware-icons.html">
+		<link rel="import" href="../../iron-flex-layout/iron-flex-layout.html">
+		 <link rel="import" href="../../iron-icons/communication-icons.html">
+	<style is="custom-style"></style>
+	
+
+    
 
     </head>
     <body>
@@ -30,12 +43,59 @@
         </paper-toolbar>
 
         <div class="card-width centered">
-            <paper-card heading="Card Title">
+            <paper-card heading="BeeS" class="cyan">
                 <div class="card-content">
-                    Card Content Here. (Hint: Copy and paste this card and put other components in it.)
-                </div>
-            </paper-card>
-        </div>
+                   This is my polymer assignment?! 8\	
+					Definitely a green apple week.
+               </div>
+			<div class="card-actions">
+				
+					<button on-click="toggle">toggle collapse</button>
+					<div>Exploring . . .</div>
+					<iron-collapse id="collapse">
+  						 <div>by yourself isn't fun!</div>
+					</iron-collapse>
 
-    </body>
+					...
+
+					toggle: function() {
+					this.$.collapse.toggle();
+					}
+				
+				</div>
+				
+<style is="custom-style">
+  #notes {
+    @apply(--layout-vertical);
+    @apply(--layout-wrap);
+    height: 344px;
+    width: 384px;
+  }
+
+  #notes > paper-card {
+    box-sizing: border-box;
+    max-width: 184px;
+    margin: 4px;
+    flex: 0 0 auto;
+  }
+</style>
+<div id="notes">
+ 
+    <div class="card-content">
+      <p>8o Oh! so cleaning day is when</p>
+     		<paper-checkbox>Tuesday?</paper-checkbox>
+			<paper-checkbox>Wednesday?</paper-checkbox>
+      		<paper-checkbox>Thursday?</paper-checkbox>
+      		<paper-checkbox>Friday?</paper-checkbox>
+    </div>
+    <div class="card-actions">
+      <paper-icon-button icon="communication:location-on" style="color:lime"></paper-icon-button>
+      <span>where's the phone??</span>
+    </div>	
+  </div>
+
+ 	
+</paper-card>      
+</div> 
+</body>
 </html>
