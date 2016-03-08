@@ -46,7 +46,7 @@
                </div>
 			<div class="card-actions">
 				
-					<button on-click="toggle">Exploring . . .</button>
+				<p>Exploring . . .</p>
 					
 					<iron-collapse id="collapse">
   						 <div>by yourself isn't fun!</div>
@@ -57,11 +57,12 @@
 					}
 				 <paper-icon-button icon="hardware:keyboard-arrow-up" title="more info" onclick="_toggle()" style="float:right;">
     </paper-icon-button>
-    <iron-collapse style="width:100%;">
+    <iron-collapse id='more-info' style="width:100%;">
      by yourself isn't fun! 
     </iron-collapse>
     <script>
       function _toggle() {
+		console.log("Should toggle now");
         var moreInfo = document.getElementById('more-info');
         var iconButton = Polymer.dom(event).localTarget;
         iconButton.icon = moreInfo.opened ? 'hardware:keyboard-arrow-up'
@@ -93,14 +94,9 @@
       <p>8o Oh! so cleaning day is when</p>
      		<paper-checkbox>Tuesday?</paper-checkbox>
 		<paper-checkbox checked> Tuesday</paper-checkbox>
-		
-		<paper-toggle-button>Wednesday</paper-toggle-button>
 			<paper-checkbox>Wednesday?</paper-checkbox>
-		
       		<paper-checkbox>Thursday?</paper-checkbox>
-		
       		<paper-checkbox>Friday?</paper-checkbox>
-		icons:check-box-outline-blank
 
     </div>
 </paper-card>	
