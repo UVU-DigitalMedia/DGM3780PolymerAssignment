@@ -69,6 +69,7 @@ textarea {
 paper-card {
     width: 100%;
 }
+
  .amber {
       background: var(--paper-amber-900);
     }
@@ -85,7 +86,7 @@ paper-card {
       --paper-checkbox-unchecked-color: grey;
     }
 
-    paper-icon-button {
+paper-icon-button {
       color: var(--paper-grey-600);
     }
 

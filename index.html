@@ -12,11 +12,12 @@
 
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
         <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
-	<script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+		<script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
 		
         <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
         <link rel="import" href="bower_components/paper-card/paper-card.html">
-
+	 <link rel="import" href="bower_components/hello.html">
+		   
         <link rel="import" href="bower_components/iron-icons/iron-icons.html">
         <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
 		
@@ -30,7 +31,7 @@
  
     </head>
     <body>
-
+		<hello first-name="Prof" last-name="Thor"></hello>
         <paper-toolbar>
                 <paper-icon-button icon="menu"></paper-icon-button>
                 <span class="title">DGM 3780 Polymer Assignment</span>
@@ -44,22 +45,22 @@
                    This is my polymer assignment?! 8\	
 					Definitely a green apple week.
                </div>
+		<h1>Hello</h1>
+
+				<paper-card>
 			<div class="card-actions">
 				
-				<p>Exploring . . .</p>
+				<p>Exploring . . . </p>
 					
-					<iron-collapse id="collapse">
-  						 <div>by yourself isn't fun!</div>
-					</iron-collapse>
-
-					. . .toggle: function() {
-					this.$.collapse.toggle();
-					}
+				 <iron-collapse id='more-info' style="width:100%;">
+					 by yourself isn't fun! 
+				</iron-collapse>	
 				 <paper-icon-button icon="hardware:keyboard-arrow-up" title="more info" onclick="_toggle()" style="float:right;">
-    </paper-icon-button>
-    <iron-collapse id='more-info' style="width:100%;">
-     by yourself isn't fun! 
-    </iron-collapse>
+				</paper-icon-button>
+   			</div>
+					
+	
+		
     <script>
       function _toggle() {
 		console.log("Should toggle now");
@@ -69,8 +70,9 @@
                                           : 'hardware:keyboard-arrow-down';
         moreInfo.toggle();
       }
-    </script>
-			</div>
+    </script> 
+</paper-card>	
+				
 				
 <style is="custom-style">
   #notes {
@@ -82,7 +84,7 @@
 
   #notes > paper-card {
     box-sizing: border-box;
-    max-width: 184px;
+    max-width: 290px;
     margin: 4px;
     flex: 0 0 auto;
   }
@@ -108,9 +110,61 @@
 	 </div>
 	
 </paper-card>
-  </div>
- </div>		
-</paper-card>      
+	
+	<dom-module id="icon-toggle">
+		  <template>
+				<style>
+				/* local styles go here */
+				:host {
+				  display: inline-block;
+				}
+				iron-icon {
+				  fill: var(--icon-toggle-color, rgba(0,0,0,0));
+				  stroke: var(--icon-toggle-outline-color, currentcolor);
+				}
+				:host([pressed]) iron-icon {
+				  fill: var(--icon-toggle-pressed-color, currentcolor);
+				}
+			  </style>
+			<!-- local DOM goes here -->
+				<iron-icon icon="[[toggleIcon]]">
+				</iron-icon>
+		  </template>
+			<script>
+				   Polymer({			 /* this is the element's prototype */
+					is: 'icon-toggle',
+					properties: {
+					  toggleIcon: String,
+					  pressed: {
+						type: Boolean,
+						value: false,
+						notify: true,
+						reflectToAttribute: true
+					  }
+					},
+					listeners: {
+					  'tap': 'toggle'
+					},
+					toggle: function() {
+					  this.pressed = !this.pressed;
+					},
+				  });
+
+			</script>
+	</dom-module>
+	
+
+	
+	
+  <script>
+  Polymer({
+    is: 'icon-toggle',
+  });
+  </script>
+
+  </div> 	
+</div> 
+</paper-card> 
 </div> 
 </body>
 </html>
