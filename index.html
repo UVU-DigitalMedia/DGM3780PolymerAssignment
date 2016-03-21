@@ -12,16 +12,26 @@
 
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
         <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
-
+		<script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+		
         <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
         <link rel="import" href="bower_components/paper-card/paper-card.html">
-
+	 <link rel="import" href="hello-world.html">
+		   
         <link rel="import" href="bower_components/iron-icons/iron-icons.html">
         <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
-
+		
+		<link rel="import" href="bower_components/paper-button/paper-button.html">
+		 <link rel="import" href="bower_components/paper-checkbox/paper-checkbox.html">
+		<link rel="import" href="bower_components/paper-styles/color.html">
+		<link rel="import" href="bower_components/iron-collapse/iron-collapse.html">
+		<link rel="import" href="bower_components/iron-icons/hardware-icons.html">
+		<link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout.html">
+		 <link rel="import" href="bower_components/iron-icons/communication-icons.html">
+ 
     </head>
     <body>
-
+		
         <paper-toolbar>
                 <paper-icon-button icon="menu"></paper-icon-button>
                 <span class="title">DGM 3780 Polymer Assignment</span>
@@ -30,12 +40,129 @@
         </paper-toolbar>
 
         <div class="card-width centered">
-            <paper-card heading="Card Title">
+		<hello-world first-name="Prof" last-name="Thor"></hello-world>
+            <paper-card heading="BeeS" class="cyan">
                 <div class="card-content">
-                    Card Content Here. (Hint: Copy and paste this card and put other components in it.)
-                </div>
-            </paper-card>
-        </div>
+                   This is my polymer assignment?! 8\	
+					Definitely a green apple week.
+               </div>
+	
 
-    </body>
+				<paper-card>
+			<div class="card-actions">
+				
+				<p>Exploring . . . </p>
+					
+				 <iron-collapse id='more-info' style="width:100%;">
+					 by yourself isn't fun! 
+				</iron-collapse>	
+				 <paper-icon-button icon="hardware:keyboard-arrow-up" title="more info" onclick="_toggle()" style="float:right;">
+				</paper-icon-button>
+   			</div>
+					
+			<hello first-name="Prof" last-name="Thor"></hello>
+
+		
+    <script>
+      function _toggle() {
+		console.log("Should toggle now");
+        var moreInfo = document.getElementById('more-info');
+        var iconButton = Polymer.dom(event).localTarget;
+        iconButton.icon = moreInfo.opened ? 'hardware:keyboard-arrow-up'
+                                          : 'hardware:keyboard-arrow-down';
+        moreInfo.toggle();
+      }
+    </script> 
+</paper-card>	
+				
+				
+<style is="custom-style">
+  #notes {
+    @apply(--layout-vertical);
+    @apply(--layout-wrap);
+    height: 344px;
+    width: 384px;
+  }
+
+  #notes > paper-card {
+    box-sizing: border-box;
+    max-width: 290px;
+    margin: 4px;
+    flex: 0 0 auto;
+  }
+</style>
+<div id="notes">
+ 	 <paper-card class="amber">
+		 
+    <div class="card-content">
+      <p>8o Oh! so cleaning day is when</p>
+     		<paper-checkbox>Tuesday?</paper-checkbox>
+		<paper-checkbox checked> Tuesday</paper-checkbox>
+			<paper-checkbox>Wednesday?</paper-checkbox>
+      		<paper-checkbox>Thursday?</paper-checkbox>
+      		<paper-checkbox>Friday?</paper-checkbox>
+
+    </div>
+</paper-card>	
+<div id="notes">
+ <paper-card>
+    <div class="card-actions">
+      <paper-icon-button icon="communication:call" style="color:lime"></paper-icon-button>
+      <span>where's the phone??</span>
+	 </div>
+	
+</paper-card>
+	
+	<dom-module id="icon-toggle">
+		  <template>
+				<style>
+				/* local styles go here */
+				:host {
+				  display: inline-block;
+				}
+				iron-icon {
+				  fill: var(--icon-toggle-color, rgba(0,0,0,0));
+				  stroke: var(--icon-toggle-outline-color, currentcolor);
+				}
+				:host([pressed]) iron-icon {
+				  fill: var(--icon-toggle-pressed-color, currentcolor);
+				}
+			  </style>
+			<!-- local DOM goes here -->
+				<iron-icon icon="[[toggleIcon]]">
+				</iron-icon>
+		  </template>
+			<script>
+				   Polymer({			 /* this is the element's prototype */
+					is: 'icon-toggle',
+					properties: {
+					  toggleIcon: String,
+					  pressed: {
+						type: Boolean,
+						value: false,
+						notify: true,
+						reflectToAttribute: true
+					  }
+					},
+					listeners: {
+					  'tap': 'toggle'
+					},
+					toggle: function() {
+					  this.pressed = !this.pressed;
+					},
+				  });
+
+			</script>
+	</dom-module>
+	
+
+	
+	
+ 
+
+  </div> 	
+</div> 
+</paper-card> 
+</div> 
+</body>
 </html>

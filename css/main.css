@@ -62,7 +62,7 @@ textarea {
 }
 
 .card-width {
-    width: 800px;
+    width: 600px;
     margin-top: 25px;
 }
 
@@ -70,7 +70,25 @@ paper-card {
     width: 100%;
 }
 
+ .amber {
+      background: var(--paper-amber-900);
+    }
+.lime {
+      background: var(--paper-lime-500);
+    }
+.cyan {
+      background: var(--paper-cyan-500);
+    }
+ paper-checkbox {
+      display: block;
+      margin-bottom: 4px;
+      --paper-checkbox-label-color: blue;
+      --paper-checkbox-unchecked-color: grey;
+    }
 
+paper-icon-button {
+      color: var(--paper-grey-600);
+    }
 
 
 
