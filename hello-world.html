@@ -5,13 +5,13 @@
 	  	   
 <style>
 		h1 {
-			color: lime;
+			color: aquamarine;
 		}						
 	</style>
 	<template>
 		<input type="text" value="{{firstName::input}}">
 		<h1>{{fullName}}</h1>
-		<h1>{{firstName}}</h1>
+		
 	</template>
 	
 </dom-module>
@@ -22,6 +22,7 @@
 			
 			properties: {
 				firstName: String,
+				
 				lastName: {
 					type: String,
 					value: 'Thor'
